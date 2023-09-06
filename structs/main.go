@@ -22,13 +22,15 @@ func main() {
 			zipCode: 12345,
 		},
 	}
-	jim.updateName("Jimmy")
+	jimPointer := &jim
+	jimPointer.updateName("Jimmy")
 	jim.print()
 
 }
 
-func (p *person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+//Was able to do this by only adding the asterisk, not sure why we need to assign the pointer inside main, as it worked without it.
+func (pointerToPerson *person) updateName(newFirstName string) {
+	(*pointerToPerson).firstName = newFirstName
 }
 
 func (p person) print() {
