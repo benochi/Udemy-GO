@@ -29,6 +29,7 @@ func main() {
 }
 
 //Was able to do this by only adding the asterisk, not sure why we need to assign the pointer inside main, as it worked without it.
+//the pointer to type pointer of a person was able to fix the bug and I need to confirm why.
 func (pointerToPerson *person) updateName(newFirstName string) {
 	(*pointerToPerson).firstName = newFirstName
 }
