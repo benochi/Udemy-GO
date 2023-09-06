@@ -22,10 +22,12 @@ func main() {
 			zipCode: 12345,
 		},
 	}
-	jimPointer := &jim
-	jimPointer.updateName("Jimmy")
-	jim.print()
+	// jimPointer := &jim
+	// jimPointer.updateName("Jimmy")
+	// jim.print()
 
+	jim.updateName("Jimmy")
+	jim.print()
 }
 
 //Was able to do this by only adding the asterisk, not sure why we need to assign the pointer inside main, as it worked without it.
