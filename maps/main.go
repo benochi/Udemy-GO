@@ -23,8 +23,6 @@ func main() {
 	// delete(colors, "white")
 
 	//iterate over a map
-
-	//
 	printMap(colors)
 }
 
