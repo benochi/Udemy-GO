@@ -2,21 +2,26 @@ package main
 
 import "fmt"
 
+type contactInfo struct {
+	email   string
+	zipCode int
+}
+
 type person struct {
 	firstName string
 	lastName  string
+	contact   contactInfo
 }
 
 func main() {
-	//can declare key or it will go by struct order.
-	// alex := person{firstName: "Alex", lastName: "Anderson"}
-	// fmt.Println(alex)
-	//another way to assign a struct go will default 0 value.
-	var alex person
+	jim := person{
+		firstName: "Jim",
+		lastName:  "Roberts",
+		contact: contactInfo{
+			email:   "123@12334.com",
+			zipCode: 12345,
+		},
+	}
 
-	alex.firstName = "Alex"
-	alex.lastName = "Anderson"
-
-	fmt.Println(alex)
-	fmt.Printf("%+v", alex)
+	fmt.Printf("%+v", jim)
 }
