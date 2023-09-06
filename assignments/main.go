@@ -11,4 +11,8 @@ func main() {
 			fmt.Println(value, "is ODD!")
 		}
 	}
+	name := "Bill"
+
+	fmt.Println(*&name)
+
 }
