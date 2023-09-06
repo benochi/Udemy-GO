@@ -17,7 +17,7 @@ func main() {
 	jim := person{
 		firstName: "Jim",
 		lastName:  "Roberts",
-		contactInfo{
+		contactInfo: contactInfo{
 			email:   "123@12334.com",
 			zipCode: 12345,
 		},
