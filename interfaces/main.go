@@ -8,16 +8,28 @@ type englishBot struct{}
 type spanishBot struct{}
 
 func main() {
-	fmt.Println("Duh")
+	eb := englishBot{}
+	// sb := spanishBot{}
+
+	printGreeting(eb)
+	// printGreeting(sb)
 }
 
+func printGreeting(eb englishBot) {
+	fmt.Println(eb.getGreeting())
+}
+
+// func printGreeting(sb spanishBot) {
+// 	fmt.Println(sb.getGreeting())
+// }
+
 //could put these on structs
-func (eb englishBot) getGreeting() string {
+//can remove receiver value and only leave type if not using variable IE 'eb/sb'
+func (englishBot) getGreeting() string {
 	//Very custom logic for generating English greeting
 	return "Hi There!"
 }
 
-func (sb spanishBot) getGreeting() string {
-	//Very custom logic for generating spanish greeting
-	return "Hola!"
-}
+// func (spanishBot) getGreeting() string {
+// 	return "Hola!"
+// }
