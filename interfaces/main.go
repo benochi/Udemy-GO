@@ -3,6 +3,8 @@ package main
 import "fmt"
 
 //Interfaces are trying to make reusing code easier.
+//interface name, func name, args, return types
+//can add as many functions as you want to qualify the interface, they must be satisfied.
 type bot interface {
 	getGreeting() string
 }
@@ -24,7 +26,7 @@ func printGreeting(b bot) {
 }
 
 //could put these on structs
-//can remove receiver value and only leave type if not using variable IE 'eb/sb'
+//can remove receiver value and only leave type if not using variable IE 'eb/sb/rb' etc
 func (englishBot) getGreeting() string {
 	return "Hi There!"
 }
