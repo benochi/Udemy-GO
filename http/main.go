@@ -6,10 +6,6 @@ import (
 	"os"
 )
 
-type httpBody interface{
-	*Response struct
-}
-
 func main() {
 
 	resp, err := http.Get("http://google.com")
@@ -19,4 +15,6 @@ func main() {
 	}
 	//for Go, resp.body doesn't work. create byteslice with make
 	bs := make([]byte, 99999)
+	resp.Body.Read(bs)
+	fmt.Println(string(bs))
 }
