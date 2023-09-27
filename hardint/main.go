@@ -36,3 +36,22 @@ func main() {
 func openFile(filename string, reader FileReader) ([]byte, error) {
 	return reader.Read(filename)
 }
+
+// package main
+
+// import (
+// 	"fmt"
+// 	"io"
+// 	"os"
+// )
+
+// // actual video solution.
+// func main() {
+// 	f, err = os.Open(os.Args[1])
+// 	if err != nil {
+// 		fmt.Println("Error:", err)
+// 		os.Exit(1)
+// 	}
+
+// 	io.Copy(os.Stdout, f)
+// }
