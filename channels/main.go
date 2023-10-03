@@ -26,8 +26,8 @@ func main() {
 		// fmt.Println(<-c) this works but seems slower.
 	}
 
-	for { //infinite loop.
-		go checkLink(<-c, c)
+	for l := range c { //infinite loop. l = link step over for loop every time channel emits a value
+		go checkLink(l, c)
 	}
 }
 
