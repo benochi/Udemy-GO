@@ -26,8 +26,8 @@ func main() {
 		// fmt.Println(<-c) this works but seems slower.
 	}
 
-	for i := 0; i < len(links); i++ {
-		fmt.Println(<-c)
+	for { //infinite loop.
+		go checkLink(<-c)
 	}
 }
 
@@ -35,10 +35,10 @@ func checkLink(link string, c chan string) {
 	_, err := http.Get(link)
 	if err != nil {
 		fmt.Println(link, "might be down.")
-		c <- "Might be down, I think."
+		c <- link
 		return
 	}
 
 	fmt.Println(link, "is up and running.")
-	c <- "Yep, it's up."
+	c <- link
 }
