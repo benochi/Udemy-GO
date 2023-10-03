@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"time"
 )
 
 // App should make reqs to multiple websites to see status.
@@ -27,7 +28,11 @@ func main() {
 	}
 
 	for l := range c { //infinite loop. l = link step over for loop every time channel emits a value
-		go checkLink(l, c)
+		go func(link string) { //link is from l arg in 2nd parenthesis from parent scope.
+			time.Sleep(5 * time.Second)
+			checkLink(link, c) //variable referenced in outer scope is bad. pass main routine data.
+		}(l) //function literal *Lambda expression* notice extra parenthesis for execution of lambda.
+		//args go into the outer parenthesis.
 	}
 }
 
