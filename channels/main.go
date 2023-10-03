@@ -27,7 +27,7 @@ func main() {
 	}
 
 	for { //infinite loop.
-		go checkLink(<-c)
+		go checkLink(<-c, c)
 	}
 }
 
